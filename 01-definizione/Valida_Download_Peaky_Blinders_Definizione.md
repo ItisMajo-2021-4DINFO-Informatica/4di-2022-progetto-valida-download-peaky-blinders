@@ -2,7 +2,7 @@
 
 # Obiettivi:
 realizzazione di una app WPF che sia in grado di:
-- Navigare il fylesystem
-- Calcolare il checksum SHA256
-- Verificare la firma digitale con la chiave pubblica PGP
-- Notificare all'utente il risultato dei controlli eseguiti
+1. Navigare il fylesystem
+2. Calcolare il checksum SHA256
+3. Verificare la firma digitale con la chiave pubblica PGP
+4. Notificare all'utente il risultato dei controlli eseguiti
