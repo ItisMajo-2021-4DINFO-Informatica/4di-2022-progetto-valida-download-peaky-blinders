@@ -24,14 +24,15 @@ Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogn
 
 ## Gap di conoscenze presenti nel gruppo 
 
-- Mignone Fabio: 
-   - Calcolo del checksum SHA 256(metodo per ricavare il checksum).
-   - Funzionamento della firma e funzionamento della chiave pubblica PGP.
-   - modifiche estetiche(modifiche avanzate dell'interfaccia ad es. colori,ombre,sfumature) degli elementi XAML.
-- Tuzza Simone:
-   -
-   -
-   -
+#### Mignone Fabio: 
+      - Calcolo del checksum SHA 256(metodo per ricavare il checksum).
+      - Funzionamento della firma e funzionamento della chiave pubblica PGP.
+      - modifiche estetiche(modifiche avanzate dell'interfaccia ad es. colori,ombre,sfumature) degli elementi XAML.
+
+#### Tuzza Simone:
+      -
+      -
+      -
    
    
 ## Informazioni e Fonti per colmare i gap di conoscenza
