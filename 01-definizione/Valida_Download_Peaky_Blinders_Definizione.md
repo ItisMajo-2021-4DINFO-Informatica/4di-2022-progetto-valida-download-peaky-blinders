@@ -3,7 +3,7 @@
 
 ## Obiettivi:
 
-###Realizzazione di una app WPF che sia in grado di:
+### Realizzazione di una app WPF che sia in grado di:
 1. Navigare il filesystem.
 2. Calcolare il checksum SHA256.
 3. Verificare la firma digitale con la chiave pubblica PGP.
@@ -24,12 +24,12 @@ Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogn
 
 ## Gap di conoscenze presenti nel gruppo 
 
--Mignone Fabio: 
+- Mignone Fabio: 
    - Calcolo del checksum SHA 256(metodo per ricavare il checksum).
    - Funzionamento della firma e funzionamento della chiave pubblica PGP.
    - modifiche estetiche(modifiche avanzate dell'interfaccia ad es. colori,ombre,sfumature) degli elementi XAML.
 
--Tuzza Simone:
+- Tuzza Simone:
    -
    -
    -
