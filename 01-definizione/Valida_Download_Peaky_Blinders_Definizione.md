@@ -30,9 +30,9 @@ Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogn
       - modifiche estetiche(modifiche avanzate dell'interfaccia ad es. colori,ombre,sfumature) degli elementi XAML.
 
 #### Tuzza Simone:
-      -
-      -
-      -
+      - Funzionamento delle chiavi PGP.
+      - Funzionamento del checksum SHA 256 e il suo calcolo.
+      - Accedere al filesystem da un'applicazione WPF.
    
    
 ## Informazioni e Fonti per colmare i gap di conoscenza
