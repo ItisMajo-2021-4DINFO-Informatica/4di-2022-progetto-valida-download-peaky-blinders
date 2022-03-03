@@ -23,7 +23,7 @@ il target di questa applicazione è un utenza con una conoscenza medio-alta dell
 
 
 ## Risposte tecnologiche per soddisfare gli obiettivi
-Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogna sia utilizzare librerie già incluse in .NET, come quella necessaria per la finestra di dialogo di windows per la selezione del file, ma anche sviluppare sottoprogrammi che siano in grado di fornire l'output richiesto, per elementi particolari aggiuntivi alle richieste base bisogna integrare informazioni che colmino i gap di conoscenza.
+Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogna sia utilizzare librerie già incluse in .NET, come quella necessaria per la finestra di dialogo di windows per la selezione del file, ma anche sviluppare sottoprogrammi che siano in grado di fornire l'output richiesto, per elementi come lo SHA256 o la verifica della firma PGP o per particolari aggiuntivi alle richieste base bisogna integrare informazioni che colmino i gap di conoscenza.
 
 
 ## Gap di conoscenze presenti nel gruppo 
