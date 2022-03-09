@@ -8,7 +8,17 @@ Infine il programma dovra restituire certi output in base al tipo di controllo e
 
 ## Organizzazione del lavoro
 
-il lavoro sarà organizzato in modo regolare, tutti i membri del gruppo(Mignone e Tuzza) lavoreranno equamente e svolgeranno al meglio e insieme il progetto affinche il risulato sia ottimale. (Tempo richiesto per lavorare)= piu presto possibile. I ruoli del gruppo saranno scelti con cura durante la realizzazione del progetto su visual studio.
+Il progetto verrà suddiviso in modo equo tra i componenti del gruppo affinchè tutti possano contribuire alla realizzazione, inoltre il lavoro verrà spartito anche a seconda dei gap di conoscenza di ogni membro permettendo ad ognuno di colmare tali gap, in caso di necessità o di gap in comune si lavorerà assieme. Il lavoro verrà suddiviso nelle fasi seguenti:
+
+  1. Realizzazione di una prima interfaccia WPF che verrà usata per la creazione e il debug (potrebbero non essere presenti tutti gli elementi dell'interfaccia in questa fase        della realizzazione).
+  2.  Creazione delle strutture dati iniziali che serviranno per il funzionamento dell'app (l'app non è completa a questo punto della realizzazione, potrebbe non funzionare).
+  3.  Sviluppo dei metodi necessari per completare gli obbiettivi presenti sul documento di definizione (potrebbero essere presenti bug a questo punto della realizzazione).
+      - Calcolo dello SHA256.
+      - Confronto dello SHA256.
+      - Verifica della firma attraverso chiave PGP.
+  4. Debugging e refactoring del codice sorgente.
+  5. Miglioramenti dell'interfaccia(potrebbero presentarsi glitch grafici a questa fase dello sviluppo).
+  6. Aggiunte extra e miglioramenti della applicazione(Questa fase comprende realizzazione, debug e refactoring e miglioramenti dell'interfaccia).
 
 ## Documentazione
 
