@@ -40,7 +40,7 @@ Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogn
    
    
 ## Informazioni e Fonti per colmare i gap di conoscenza
-- Docs Microsoft: documentazione completa ed esaustiva richiede un livello medio-basso di conoscenze generali per la comprensione ottimale della documentazione.
+- [Docs Microsoft](https://docs.microsoft.com/it-it/dotnet/): documentazione completa ed esaustiva richiede un livello medio-basso di conoscenze generali per la comprensione ottimale della documentazione.
 - wpf-tutorial.com: documentazione di facile comprensione con parti di codice pronte per l'implementazione, ma poco esaustiva spesso richiede ulteriori approfondimenti. 
 - Stack Overflow: piattaforma per la risoluzione di problemi legati al codice.
 - Moodle(classe 4Di Sezione Informatica): Fonte dalla quale è possibile prelevare vecchi progetti per riutilizzare il codice e lezioni su argomenti legati alla teoria come la     chiave PGP.
