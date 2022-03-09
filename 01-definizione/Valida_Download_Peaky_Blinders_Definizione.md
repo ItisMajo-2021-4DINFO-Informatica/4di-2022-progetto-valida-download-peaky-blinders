@@ -46,4 +46,4 @@ Per soddisfare i requisiti necessari per il completamento degli obiettivi bisogn
 - [Moodle](http://moodle.itismajo.it/course/view.php?id=1853)(classe 4Di Sezione Informatica): Fonte dalla quale è possibile prelevare vecchi progetti per riutilizzare il codice e lezioni su argomenti legati alla teoria come la     chiave PGP.
 
 
-***Attenzione il programma è stato sviluppato e compilato utilizzando Visual Studio 2019 con framework .NET versione 5.0 su sistema operativo Windows***
+***Attenzione il programma è stato sviluppato e compilato utilizzando Visual Studio 2019 con framework .NET versione 5.0 su sistema operativo Windows*** 
