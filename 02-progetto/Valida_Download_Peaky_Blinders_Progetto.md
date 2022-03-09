@@ -14,13 +14,9 @@ il lavoro sarà organizzato in modo regolare, tutti i membri del gruppo(Mignone 
 
 Tutta la documentazione relativa alla realizzazione è visibile su github, ogni commit è accompagnato da un commento per rendere chiaro ogni passaggio eseguito durante la fase di sviluppo affinche qualsiasi utente sia in grado di vedere il codice sorgente ad ogni sua fase della realizzazione.
 
-Documentazione dei collegamenti= direttamnete su moodle del majorana sulla sezione 4dinf 2021/2022 informatica in modo specifico laboratorio "Esperienza con la cifratura a chiave asimmetrica". I punti sono 
-1. Scarica il software di cifratura https://www.gpg4win.org/download.html
-2. Usa l'applicazione Kleopatra per generare la tua coppia di chiavi personali
-3. Rendi disponibile a tutti la tua chiave pubblica (per esempio sul tuo profilo GitHub)
-4. Cifra un messaggio con la chiave pubblica di un tuo compagno e invialo a lui
-5. Decifra con la tua chiave privata un messaggio che ti è stato inviato da un tuo compagno
-
-Metodo di apertura di un file= https://www.wpf-tutorial.com/it/46/dialogs/l-openfiledialog/.
-Calcolo SHA 256= https://support.google.com/google-ads/answer/9004655?hl=it#:~:text=SHA%2D256%20%C3%A8%20un%20algoritmo,valori%20creino%20lo%20stesso%20hash.
+Documentazione per colmare i gap di conoscenza, i punti sono:
+- [Implentazione del sistema di cifratura PGP](https://github.com/mattosaurus/PgpCore)
+- [Selezione del file(docs microsoft)](https://docs.microsoft.com/it-it/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-6.0)
+- [Selezione del file(wpf-tutorial)](https://www.wpf-tutorial.com/it/46/dialogs/l-openfiledialog/)
+- [Calcolo SHA 256](https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.sha256?view=net-6.0)
 
