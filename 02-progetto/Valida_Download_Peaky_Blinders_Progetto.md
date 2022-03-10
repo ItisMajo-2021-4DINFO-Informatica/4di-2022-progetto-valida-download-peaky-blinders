@@ -48,9 +48,15 @@ Tempi di sviluppo
 
 Tutta la documentazione relativa alla realizzazione è visibile su github, ogni commit è accompagnato da un commento per rendere chiaro ogni passaggio eseguito durante la fase di sviluppo affinche qualsiasi utente sia in grado di vedere il codice sorgente ad ogni sua fase della realizzazione.
 
-Documentazione per colmare i gap di conoscenza:
+Collegamenti con la Teoria: 
+- Incapsulamento: lezione di teoria relativa all'incapsulamento.
+- Controllo firma digitale PGP: lezione teorica sul controllo della firma e sul funzionamento delle chiavi PGP.
+- Funzionamento dello SHA256: lezione di teoria sul funzionamento delle somme di controllo e nello specifico quella di tipo SHA256.
+
+Documentazione per la realizzazione del progetto:
 - [Implentazione del sistema di cifratura PGP](https://github.com/mattosaurus/PgpCore)
 - [Selezione del file(docs microsoft)](https://docs.microsoft.com/it-it/dotnet/api/system.windows.forms.openfiledialog?view=windowsdesktop-6.0)
 - [Selezione del file(wpf-tutorial)](https://www.wpf-tutorial.com/it/46/dialogs/l-openfiledialog/)
 - [Calcolo SHA 256](https://docs.microsoft.com/it-it/dotnet/api/system.security.cryptography.sha256?view=net-6.0)
+* Altri elementi sono presenti su moodle e sono stati aggiunti dal professore come materiale d'esempio per realizzare la soluzione.
 
