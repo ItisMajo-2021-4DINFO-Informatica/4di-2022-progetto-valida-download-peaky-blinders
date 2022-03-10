@@ -32,6 +32,16 @@ Il progetto verrà suddiviso in modo equo tra i componenti del gruppo affinché 
   
   6. Aggiunte extra e miglioramenti della applicazione:
       - Questa fase verrà messa in atto solo dopo la realizzazione della prima versione finale dell'applicazione(Valida Download 1.0) verranno apportate modifiche estetiche e           funzionali per aumentare le capacità del programma, ogni aggiunta seguirà una fase di realizzazione, debug e refactoring per garantire un livello di qualità coerente con         l'intero progetto.
+
+Tempi di sviluppo 
+- Fase 1: 4 ore
+- Fase 2: 6 ore
+- Fase 3: 16/18 ore
+- Fase 4: 4/6 ore
+- Fase 5: 6 ore
+- Fase 6: tempo rimanente fino alla scadenza della consegna
+
+*I tempi di sviluppo sono indicativi e si riferiscono alle ore di laboratorio, lo sviluppo continuerà anche nelle ore extrascolastiche quindi i tempi potrebbero essere anticipati.*
   
 ***Attenzione nelle fasi precedenti al rilascio della versione finale potrebbero essere presenti bug e glitch sia funzionali che grafici***
   
