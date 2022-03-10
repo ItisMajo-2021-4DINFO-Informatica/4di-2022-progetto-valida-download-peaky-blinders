@@ -1,10 +1,7 @@
 # Valida Download by Peaky Blinders Documento di Progetto
 
-## Stesura del progetto iniziale e realizzazione della soluzione
-Per iniziare bisogna essere in grado di naviagare il filesystem dell'applicazione, dove ci saranno i file in ogni directory.
-Poi bisogna eseguire il calcolo del checksum di tipo SHA 256 cosi da verificare l'integrità del file scaricato.
-Poi il programma dovrà avere la chiave pubblica PGP per verificare la firma digitale e la conferma che si stia scaricando un file da una fonte attendibile.
-Infine il programma dovra restituire certi output in base al tipo di controllo eseguito e risultato rispetti i paramentri dati all'inizio.
+## Stesura del progetto iniziale 
+L'applicazione verrà realizzata in modo da permettere all'utente di poter verificare la firma digitale PGP, in modo da assicurasi che il file provenga da una fonte attendibile, calcolare la somma di controllo di tipo SHA256 del file inserito e confrontarla con quella fornita per verificare l'integrità del file. L'utente sarà in grado di selezionare un file, di quest'ultimo verificarne la firma PGP, calcolare lo SHA256 e verificare che corrisponda con quello inserito(fornito da chi rilascia il file) e una volta completate queste operazione, l'utente deve poter leggere chiaramente gli output. Lo sviluppo seguirà diverse fasi presentate nella sezione sottostante.
 
 ---
 
