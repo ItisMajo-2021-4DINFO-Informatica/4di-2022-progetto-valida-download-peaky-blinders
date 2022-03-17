@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValidaDownloadByPeakyBlinders"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Valida Download" Height="450" Width="800">
     <Grid>
+        <Button x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26"/>
+        <Label Content="Percorso del file: " HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="267"/>
 
     </Grid>
 </Window>
