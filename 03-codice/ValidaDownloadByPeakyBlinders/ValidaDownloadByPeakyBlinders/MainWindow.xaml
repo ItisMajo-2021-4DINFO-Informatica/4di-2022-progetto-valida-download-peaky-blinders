@@ -9,6 +9,12 @@
     <Grid>
         <Button x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26"/>
         <Label Content="Percorso del file: " HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="267"/>
+        <DataGrid x:Name="Dg" Margin="490,138,10,10" Width="300"/>
+        <Button x:Name="BtnAggiungiChiave" Content="Aggiungi Chiave" HorizontalAlignment="Left" Margin="490,113,0,0" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="TxtChiave" HorizontalAlignment="Left" Margin="490,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Margin="490,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="LblNome" Content="Inserisci il nome" HorizontalAlignment="Left" Margin="490,5,0,0" VerticalAlignment="Top" Width="300"/>
+        <Label x:Name="LblChiave" Content="Inserisci la chiave PGP" HorizontalAlignment="Left" Margin="490,59,0,0" VerticalAlignment="Top" Width="300"/>
 
     </Grid>
 </Window>
