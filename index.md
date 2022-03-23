@@ -7,3 +7,8 @@ Valida Download è un progetto sviluppato da Peaky Blinders, che si pone lo scop
 Nel seguente elenco sono presenti i link per raggiungere i documenti di definizione e progetto che serviranno a rendere più chiare le idee di cosa verrà realizzato nell'app:
   - [Documento di definizione](/01-definizione/Valida_Download_Peaky_Blinders_Definizione.md)
   - [Documento di progetto](/02-progetto/Valida_Download_Peaky_Blinders_Progetto.md)
+
+---
+I membri del gruppo che hanno partecipato alllo sviluppo di questo progetto sono:
+- [Fabio Mignone](https://github.com/Fabio-Mignone)
+- [Simone Tuzza](https://github.com/Simone-Tuzza)
