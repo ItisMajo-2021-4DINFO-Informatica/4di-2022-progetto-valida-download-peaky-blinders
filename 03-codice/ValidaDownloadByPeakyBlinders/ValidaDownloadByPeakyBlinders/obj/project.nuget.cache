@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o76DAhaYeOhor7Px0Lu7O9Wruu/Q8Q3ARJZwonbTzdwlGdxERUeC3v+pf41uv54mfa15T2dsKrkpi7xMULoDVw==",
+  "dgSpecHash": "UbzFvQ0L4iM7RJcEGIm7Si5togrSONcf3vpELxgISWK/6Gqkx0qLkRxquXniVsalps7Xqu5FEcTsgb7jYKo+5Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Utente\\Desktop\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\migno\\Desktop\\4di-2022-progetto-valida-download-peaky-blinders\\03-codice\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\migno\\.nuget\\packages\\pgpcore\\5.5.0\\pgpcore.5.5.0.nupkg.sha512",
+    "C:\\Users\\migno\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512"
+  ],
   "logs": []
 }
