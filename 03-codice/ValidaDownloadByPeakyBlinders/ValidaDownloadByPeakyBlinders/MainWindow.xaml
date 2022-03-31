@@ -7,19 +7,18 @@
         mc:Ignorable="d"
         Title="Valida Download" Height="450" Width="800">
     <Grid>
-        <Button x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26"/>
-        <Label Content="Percorso del file: " HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="267"/>
-        <DataGrid x:Name="Dg" Margin="490,138,10,10" Width="300"/>
-        <Button x:Name="BtnAggiungiChiave" Content="Aggiungi Chiave" HorizontalAlignment="Left" Margin="490,113,0,0" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="TxtChiave" HorizontalAlignment="Left" Margin="490,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Margin="490,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
-        <Label x:Name="LblNome" Content="Inserisci il nome" HorizontalAlignment="Left" Margin="490,5,0,0" VerticalAlignment="Top" Width="300"/>
-        <Label x:Name="LblChiave" Content="Inserisci la chiave PGP" HorizontalAlignment="Left" Margin="490,59,0,0" VerticalAlignment="Top" Width="300"/>
-        <TextBox x:Name="TxtSha" HorizontalAlignment="Left" Margin="133,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Height="20"/>
-        <Button x:Name="BtnSha" Content="Confronta sha con:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="118"/>
-        <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="11,177,0,0" VerticalAlignment="Top" Width="273"/>
-        <Button x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="118" Height="26"/>
-        <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="133,217,0,0" VerticalAlignment="Top" Width="302"/>
-
+        <Button x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26" />
+        <Label Content="Percorso del file: " HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="267" />
+        <DataGrid x:Name="Dg" Margin="490,138,10,10" Width="300" />
+        <Button x:Name="BtnAggiungiChiave" Content="Aggiungi Chiave" HorizontalAlignment="Left" Margin="490,113,0,0" VerticalAlignment="Top" Width="300" />
+        <TextBox x:Name="TxtChiave" HorizontalAlignment="Left" Margin="490,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
+        <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Margin="490,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
+        <Label x:Name="LblNome" Content="Inserisci il nome" HorizontalAlignment="Left" Margin="490,5,0,0" VerticalAlignment="Top" Width="300" />
+        <Label x:Name="LblChiave" Content="Inserisci la chiave PGP" HorizontalAlignment="Left" Margin="490,59,0,0" VerticalAlignment="Top" Width="300" />
+        <TextBox x:Name="TxtSha" HorizontalAlignment="Left" Margin="133,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="302" Height="20" />
+        <Button x:Name="BtnSha" Content="Confronta sha con:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="118" />
+        <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="11,177,0,0" VerticalAlignment="Top" Width="273" />
+        <Button x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="118" Height="26" />
+        <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="133,217,0,0" VerticalAlignment="Top" Width="302" />
     </Grid>
 </Window>
