@@ -24,5 +24,18 @@ namespace ValidaDownloadByPeakyBlinders
             LblPercorso.Content = "Percorso del file: " + percorso;
             ASHCalcolato = metodi.CalcoloAsh(percorso);
         }
+
+        private void BtnSha_Click(object sender, RoutedEventArgs e)
+        {
+            string ASHinput = TxtSha.Text;
+            if (ASHCalcolato == ASHinput)
+            {
+                LblSha.Content = "L'ASH CALCOLATO CORRISPONDE CON QUELLO DEL FILE";
+            }
+            else
+            {
+                LblSha.Content = "ATTENZIONE L'ASH CALCOLATO NON CORRISPONDE";
+            }
+        }
     }
 }
