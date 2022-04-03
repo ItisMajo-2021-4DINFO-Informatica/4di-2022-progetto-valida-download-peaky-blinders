@@ -7,7 +7,7 @@ namespace ValidaDownloadByPeakyBlinders.Classi
 {
     internal class Metodi
     {
-        public static string CalcoloAsh(string filename)
+        public string CalcoloAsh(string filename)
         {
             using (var Sha256 = SHA256.Create())
             {

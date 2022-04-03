@@ -7,6 +7,8 @@ namespace ValidaDownloadByPeakyBlinders
     {
         private ListaChiavi listachiavi;
         private Metodi metodi;
+        string ASHCalcolato;
+
 
         public MainWindow()
         {
@@ -18,7 +20,9 @@ namespace ValidaDownloadByPeakyBlinders
 
         private void BtnCercaFile_Click(object sender, RoutedEventArgs e)
         {
-            LblPercorso.Content = "Percorso del file: " + metodi.CercaFile();
+            string percorso = metodi.CercaFile();
+            LblPercorso.Content = "Percorso del file: " + percorso;
+            ASHCalcolato = metodi.CalcoloAsh(percorso);
         }
     }
 }
