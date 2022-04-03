@@ -7,25 +7,6 @@ namespace ValidaDownloadByPeakyBlinders.Classi
 {
     internal class Metodi
     {
-        public void LeggiFile()
-        {
-            using (FileStream flusso = new FileStream("Chiavi.txt", FileMode.Open, FileAccess.Read))
-            {
-                StreamReader reader = new StreamReader(flusso);
-
-                string contenuto = "";
-                while (!reader.EndOfStream)
-                {
-                    string linea = reader.ReadLine();
-                    string[] campi = linea.Split(';');
-
-                    var unDocumento = new CollezioneChiavi();
-                    unDocumento.NomeChiave = campi[0];
-                    unDocumento.Chiave = campi[1];
-                }
-            }
-        }
-
         public static string CalcoloAsh(string filename)
         {
             using (var Sha256 = SHA256.Create())
@@ -47,5 +28,7 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             }
             else { return "Errore"; }
         }
+        
+        
     }
 }

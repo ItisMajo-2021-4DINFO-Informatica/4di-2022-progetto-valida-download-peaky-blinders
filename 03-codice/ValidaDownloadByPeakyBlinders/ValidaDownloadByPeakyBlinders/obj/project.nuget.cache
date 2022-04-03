@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "UbzFvQ0L4iM7RJcEGIm7Si5togrSONcf3vpELxgISWK/6Gqkx0qLkRxquXniVsalps7Xqu5FEcTsgb7jYKo+5Q==",
+  "dgSpecHash": "uivKwnecUEk+rNIKAB8N4OrfuRC/VNUhtjPKx6uahSX31AAD8zfLYgum138AbSiNdcjZtcvvuMQ+V6rNslLmjA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\migno\\Desktop\\4di-2022-progetto-valida-download-peaky-blinders\\03-codice\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders.csproj",
+  "projectFilePath": "C:\\Users\\FABIO\\Desktop\\4di-2022-progetto-valida-download-peaky-blinders\\03-codice\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\migno\\.nuget\\packages\\pgpcore\\5.5.0\\pgpcore.5.5.0.nupkg.sha512",
-    "C:\\Users\\migno\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512"
+    "C:\\Users\\FABIO\\.nuget\\packages\\pgpcore\\5.5.0\\pgpcore.5.5.0.nupkg.sha512",
+    "C:\\Users\\FABIO\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512"
   ],
   "logs": []
 }
