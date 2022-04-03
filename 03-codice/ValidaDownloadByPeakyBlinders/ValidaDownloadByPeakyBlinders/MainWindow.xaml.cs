@@ -7,8 +7,7 @@ namespace ValidaDownloadByPeakyBlinders
     {
         private ListaChiavi listachiavi;
         private Metodi metodi;
-        string ASHCalcolato;
-
+        private string ASHCalcolato;
 
         public MainWindow()
         {
@@ -28,13 +27,20 @@ namespace ValidaDownloadByPeakyBlinders
         private void BtnSha_Click(object sender, RoutedEventArgs e)
         {
             string ASHinput = TxtSha.Text;
-            if (ASHCalcolato == ASHinput)
+            if (ASHinput == null || ASHinput == " ")
             {
-                LblSha.Content = "L'ASH CALCOLATO CORRISPONDE CON QUELLO DEL FILE";
+                LblSha.Content = "ERRORE INSERIRE UNO SHA DI CONFRONTO";
             }
             else
             {
-                LblSha.Content = "ATTENZIONE L'ASH CALCOLATO NON CORRISPONDE";
+                if (ASHCalcolato == ASHinput)
+                {
+                    LblSha.Content = "LO SHA CALCOLATO CORRISPONDE CON QUELLO DEL FILE";
+                }
+                else
+                {
+                    LblSha.Content = "ATTENZIONE LO SHA CALCOLATO NON CORRISPONDE";
+                }
             }
         }
     }

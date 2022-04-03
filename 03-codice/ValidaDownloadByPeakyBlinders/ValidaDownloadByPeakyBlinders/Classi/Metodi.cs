@@ -28,7 +28,5 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             }
             else { return "Errore"; }
         }
-        
-        
     }
 }
