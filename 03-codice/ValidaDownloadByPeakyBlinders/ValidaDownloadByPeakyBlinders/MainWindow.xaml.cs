@@ -8,6 +8,7 @@ namespace ValidaDownloadByPeakyBlinders
         private ListaChiavi listachiavi;
         private Metodi metodi;
         private string ASHCalcolato;
+        private string percorso;
 
         public MainWindow()
         {
@@ -19,7 +20,7 @@ namespace ValidaDownloadByPeakyBlinders
 
         private void BtnCercaFile_Click(object sender, RoutedEventArgs e)
         {
-            string percorso = metodi.CercaFile();
+            percorso = metodi.CercaFile();
             LblPercorso.Content = "Percorso del file: " + percorso;
             ASHCalcolato = metodi.CalcoloAsh(percorso);
         }
@@ -41,6 +42,20 @@ namespace ValidaDownloadByPeakyBlinders
                 {
                     LblSha.Content = "ATTENZIONE LO SHA CALCOLATO NON CORRISPONDE";
                 }
+            }
+        }
+
+        private void BtnFirma_Click(object sender, RoutedEventArgs e)
+        {
+            string firma = TxtFirma.Text;
+            bool controllo = metodi.VerificaFirma(firma, percorso);
+            if (controllo != true)
+            {
+                LblFirma.Content = "ATTENZIONE IL FILE NON È ORIGINALE";
+            }
+            else 
+            {
+                LblFirma.Content = "IL FILE È ORIGINALE";
             }
         }
     }

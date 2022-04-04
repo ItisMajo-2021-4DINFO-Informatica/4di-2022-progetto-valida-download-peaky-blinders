@@ -29,5 +29,11 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             }
             else { return "Errore"; }
         }
+
+        public bool VerificaFirma(string firma, string filename)
+        {
+            bool controllo = true;
+            return controllo;
+        }
     }
 }
