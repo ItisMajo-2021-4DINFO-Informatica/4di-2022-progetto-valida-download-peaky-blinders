@@ -15,11 +15,14 @@
         <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Margin="490,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
         <Label x:Name="LblNome" Content="Inserisci il nome" HorizontalAlignment="Left" Margin="490,5,0,0" VerticalAlignment="Top" Width="300" />
         <Label x:Name="LblChiave" Content="Inserisci la chiave PGP" HorizontalAlignment="Left" Margin="490,59,0,0" VerticalAlignment="Top" Width="300" />
-        <TextBox x:Name="TxtSha" HorizontalAlignment="Left" Margin="133,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Height="20" />
-        <Button x:Name="BtnSha" Content="Confronta SHA con:" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="118" Click="BtnSha_Click" />
-        <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="11,177,0,0" VerticalAlignment="Top" Width="474" />
-        <Button x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="BtnFirma_Click" />
-        <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="11,248,0,0" VerticalAlignment="Top" Width="302" />
-        <TextBox x:Name="TxtFirma" HorizontalAlignment="Left" Margin="133,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Height="26"/>
+        <TextBox x:Name="TxtSha" HorizontalAlignment="Left" Margin="133,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Height="20" />
+        <Button x:Name="BtnSha" Content="Confronta SHA con:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="118" Click="BtnSha_Click" />
+        <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top" Width="474" />
+        <Button x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="BtnFirma_Click" />
+        <Label x:Name="LblFirmaVerificata" Content="" HorizontalAlignment="Left" Margin="136,248,0,0" VerticalAlignment="Top" Width="349" />
+        <Button x:Name="BtnCercaPgp" Content="Cerca File .pgp" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Height="26" Width="251" Click="BtnCercaPgp_Click"/>
+        <Button x:Name="BtnCercaChiave" Content="Cerca File .asc" HorizontalAlignment="Left" Margin="11,186,0,0" VerticalAlignment="Top" Height="26" Width="251" Click="BtnCercaChiave_Click"/>
+        <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="267,186,0,0" VerticalAlignment="Top" Width="218"/>
+        <Label x:Name="LblPgp" Content="" HorizontalAlignment="Left" Margin="266,217,0,0" VerticalAlignment="Top" Width="218"/>
     </Grid>
 </Window>

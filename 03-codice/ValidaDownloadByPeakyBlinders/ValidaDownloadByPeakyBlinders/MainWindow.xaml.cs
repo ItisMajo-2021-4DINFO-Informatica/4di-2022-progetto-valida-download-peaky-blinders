@@ -9,6 +9,8 @@ namespace ValidaDownloadByPeakyBlinders
         private Metodi metodi;
         private string ASHCalcolato;
         private string percorso;
+        private string percorsochiave;
+        private string percorsopgp;
 
         public MainWindow()
         {
@@ -47,16 +49,28 @@ namespace ValidaDownloadByPeakyBlinders
 
         private void BtnFirma_Click(object sender, RoutedEventArgs e)
         {
-            string firma = TxtFirma.Text;
-            bool controllo = metodi.VerificaFirma(firma, percorso);
-            if (controllo != true)
+            
+            bool controllo = metodi.VerificaFirma(percorsochiave, percorsopgp).Result;
+            if (!controllo)
             {
-                LblFirma.Content = "ATTENZIONE IL FILE NON È ORIGINALE";
+                LblFirmaVerificata.Content = "ATTENZIONE IL FILE NON È ORIGINALE";
             }
             else 
             {
-                LblFirma.Content = "IL FILE È ORIGINALE";
+                LblFirmaVerificata.Content = "IL FILE È ORIGINALE";
             }
+        }
+
+        private void BtnCercaChiave_Click(object sender, RoutedEventArgs e)
+        {
+            percorsochiave = metodi.CercaFile();
+            LblFirma.Content = percorsochiave;
+        }
+
+        private void BtnCercaPgp_Click(object sender, RoutedEventArgs e)
+        {
+            percorsopgp = metodi.CercaFile();
+            LblPgp.Content = percorsopgp;
         }
     }
 }

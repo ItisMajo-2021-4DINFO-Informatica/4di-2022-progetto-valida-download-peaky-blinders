@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 using PgpCore;
+using System.Threading.Tasks;
 
 namespace ValidaDownloadByPeakyBlinders.Classi
 {
@@ -30,10 +31,14 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             else { return "Errore"; }
         }
 
-        public bool VerificaFirma(string firma, string filename)
+        public async Task<bool> VerificaFirma(string firma, string filename)
         {
-            bool controllo = true;
-            return controllo;
+            FileInfo publicKey = new FileInfo(firma);
+            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
+            FileInfo inputFile = new FileInfo(filename);
+            PGP pgp = new PGP(encryptionKeys);
+            bool verified = await pgp.VerifyFileAsync(inputFile);
+            return verified;
         }
     }
 }
