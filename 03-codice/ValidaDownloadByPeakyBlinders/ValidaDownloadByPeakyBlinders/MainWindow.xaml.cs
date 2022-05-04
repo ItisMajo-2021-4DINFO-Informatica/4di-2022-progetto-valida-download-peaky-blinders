@@ -1,23 +1,58 @@
-﻿using System.Windows;
+﻿using fusione;
+using System;
+using System.Windows;
+using System.Windows.Input;
 using ValidaDownloadByPeakyBlinders.Classi;
+
 
 namespace ValidaDownloadByPeakyBlinders
 {
     public partial class MainWindow : Window
     {
-        private ListaChiavi listachiavi;
-        private Metodi metodi;
-        private string ASHCalcolato;
-        private string percorso;
-        private string percorsochiave;
-        private string percorsopgp;
+        Metodi metodi = new Metodi();
+        string ASHCalcolato;
+        string percorso;
+        string percorsochiave;
+        string percorsopgp;
+
+        public MainWindow(bool doNotMakeInvisible)
+        {
+            InitializeComponent();
+            
+        }
 
         public MainWindow()
         {
             InitializeComponent();
-            listachiavi = new ListaChiavi();
-            metodi = new Metodi();
-            Dg.ItemsSource = listachiavi.ColleChiavi;
+            Hide();
+            Form1 form = new Form1();
+            form.ShowDialog();
+            Close();
+        }
+        
+
+        private void closeApp(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void minimizeApp(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                this.WindowState = WindowState.Minimized;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BtnCercaFile_Click(object sender, RoutedEventArgs e)
@@ -49,16 +84,8 @@ namespace ValidaDownloadByPeakyBlinders
 
         private void BtnFirma_Click(object sender, RoutedEventArgs e)
         {
-            
-            bool controllo = metodi.VerificaFirma(percorsochiave, percorsopgp).Result;
-            if (!controllo)
-            {
-                LblFirmaVerificata.Content = "ATTENZIONE IL FILE NON È ORIGINALE";
-            }
-            else 
-            {
-                LblFirmaVerificata.Content = "IL FILE È ORIGINALE";
-            }
+            string controllo = metodi.VerificaFirma(percorsochiave, percorsopgp);
+            LblFirmaVerificata.Content = controllo;
         }
 
         private void BtnCercaChiave_Click(object sender, RoutedEventArgs e)

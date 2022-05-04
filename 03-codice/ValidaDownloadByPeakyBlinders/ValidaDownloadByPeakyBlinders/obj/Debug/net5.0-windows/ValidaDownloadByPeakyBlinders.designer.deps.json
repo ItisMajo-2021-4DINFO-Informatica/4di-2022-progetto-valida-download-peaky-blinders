@@ -6,6 +6,26 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
+      "DidiSoft.Pgp.Trial/1.9.3.82": {
+        "runtime": {
+          "lib/net5.0/DidiSoft.BouncyCastle.dll": {
+            "assemblyVersion": "1.8.9.0",
+            "fileVersion": "1.8.20343.1"
+          },
+          "lib/net5.0/DidiSoft.Pgp.Mail.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net5.0/DidiSoft.Pgp.Net.LdapClient.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          },
+          "lib/net5.0/DidiSoft.Pgp.dll": {
+            "assemblyVersion": "1.9.3.82",
+            "fileVersion": "1.9.3.82"
+          }
+        }
+      },
       "PgpCore/5.5.0": {
         "dependencies": {
           "Portable.BouncyCastle": "1.8.9"
@@ -28,6 +48,13 @@
     }
   },
   "libraries": {
+    "DidiSoft.Pgp.Trial/1.9.3.82": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ibXhbq06/jc0IeRx9TNqOFXpp2VFURtx/eTfMCYJCExYNhJ5avpzNSMXtzhfF5SUYyJekfyHIqtP4C7eOlP4Ng==",
+      "path": "didisoft.pgp.trial/1.9.3.82",
+      "hashPath": "didisoft.pgp.trial.1.9.3.82.nupkg.sha512"
+    },
     "PgpCore/5.5.0": {
       "type": "package",
       "serviceable": true,

@@ -1,9 +1,8 @@
-﻿using Microsoft.Win32;
+﻿using DidiSoft.Pgp;
+using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Security.Cryptography;
-using PgpCore;
-using System.Threading.Tasks;
 
 namespace ValidaDownloadByPeakyBlinders.Classi
 {
@@ -31,14 +30,30 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             else { return "Errore"; }
         }
 
-        public async Task<bool> VerificaFirma(string firma, string filename)
+        public string VerificaFirma(string firma, string filename)
         {
-            FileInfo publicKey = new FileInfo(firma);
-            EncryptionKeys encryptionKeys = new EncryptionKeys(publicKey);
-            FileInfo inputFile = new FileInfo(filename);
-            PGP pgp = new PGP(encryptionKeys);
-            bool verified = await pgp.VerifyFileAsync(inputFile);
-            return verified;
+            PGPLib pgp = new PGPLib();
+            SignatureCheckResult signatureCheck =
+                pgp.VerifyFile(filename,
+                               firma);
+
+            if (signatureCheck == SignatureCheckResult.SignatureVerified)
+            {
+                return ("Signare OK").ToString();
+            }
+            else if (signatureCheck == SignatureCheckResult.SignatureBroken)
+            {
+                return ("Signare of the message is either broken or forged").ToString();
+            }
+            else if (signatureCheck == SignatureCheckResult.PublicKeyNotMatching)
+            {
+                return ("The provided public key doesn't match the signature").ToString();
+            }
+            else if (signatureCheck == SignatureCheckResult.NoSignatureFound)
+            {
+                return ("This message is not digitally signed").ToString();
+            }
+            return ("ERRORE").ToString();
         }
     }
 }

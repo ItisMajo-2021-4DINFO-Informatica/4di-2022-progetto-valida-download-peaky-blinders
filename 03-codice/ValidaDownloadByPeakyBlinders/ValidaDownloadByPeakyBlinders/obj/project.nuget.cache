@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UbzFvQ0L4iM7RJcEGIm7Si5togrSONcf3vpELxgISWK/6Gqkx0qLkRxquXniVsalps7Xqu5FEcTsgb7jYKo+5Q==",
+  "dgSpecHash": "yi1BADZLgSJ7CEMK0Cr7tln54wgejNk3r5300+KWjcdSnLc3FSKzilU9k3fNWXfBQJ9lEOB2/QdL8cgVBGtLcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\migno\\Desktop\\4di-2022-progetto-valida-download-peaky-blinders\\03-codice\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders\\ValidaDownloadByPeakyBlinders.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\migno\\.nuget\\packages\\didisoft.pgp.trial\\1.9.3.82\\didisoft.pgp.trial.1.9.3.82.nupkg.sha512",
     "C:\\Users\\migno\\.nuget\\packages\\pgpcore\\5.5.0\\pgpcore.5.5.0.nupkg.sha512",
     "C:\\Users\\migno\\.nuget\\packages\\portable.bouncycastle\\1.8.9\\portable.bouncycastle.1.8.9.nupkg.sha512"
   ],

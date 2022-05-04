@@ -5,24 +5,324 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ValidaDownloadByPeakyBlinders"
         mc:Ignorable="d"
-        Title="Valida Download" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="BtnCercaFile_Click" />
-        <Label x:Name="LblPercorso" Content="Percorso del file: " HorizontalAlignment="Left" Margin="133,10,0,0" VerticalAlignment="Top" Width="267" />
-        <DataGrid x:Name="Dg" Margin="490,138,10,10" Width="300" />
-        <Button x:Name="BtnAggiungiChiave" Content="Aggiungi Chiave" HorizontalAlignment="Left" Margin="490,113,0,0" VerticalAlignment="Top" Width="300" />
-        <TextBox x:Name="TxtChiave" HorizontalAlignment="Left" Margin="490,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
-        <TextBox x:Name="TxtNome" HorizontalAlignment="Left" Margin="490,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" />
-        <Label x:Name="LblNome" Content="Inserisci il nome" HorizontalAlignment="Left" Margin="490,5,0,0" VerticalAlignment="Top" Width="300" />
-        <Label x:Name="LblChiave" Content="Inserisci la chiave PGP" HorizontalAlignment="Left" Margin="490,59,0,0" VerticalAlignment="Top" Width="300" />
-        <TextBox x:Name="TxtSha" HorizontalAlignment="Left" Margin="133,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Height="20" />
-        <Button x:Name="BtnSha" Content="Confronta SHA con:" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="118" Click="BtnSha_Click" />
-        <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top" Width="474" />
-        <Button x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Margin="10,248,0,0" VerticalAlignment="Top" Width="118" Height="26" Click="BtnFirma_Click" />
-        <Label x:Name="LblFirmaVerificata" Content="" HorizontalAlignment="Left" Margin="136,248,0,0" VerticalAlignment="Top" Width="349" />
-        <Button x:Name="BtnCercaPgp" Content="Cerca File .pgp" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Height="26" Width="251" Click="BtnCercaPgp_Click"/>
-        <Button x:Name="BtnCercaChiave" Content="Cerca File .asc" HorizontalAlignment="Left" Margin="11,186,0,0" VerticalAlignment="Top" Height="26" Width="251" Click="BtnCercaChiave_Click"/>
-        <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="267,186,0,0" VerticalAlignment="Top" Width="218"/>
-        <Label x:Name="LblPgp" Content="" HorizontalAlignment="Left" Margin="266,217,0,0" VerticalAlignment="Top" Width="218"/>
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" Visibility="Hidden" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="Transparent">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyle1" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true" CornerRadius="10,10,10,10">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" CornerRadius="10,10,10,10">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle x:Name="Border" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" SnapsToDevicePixels="True"/>
+                            <Polygon x:Name="Arrow" Fill="Black" HorizontalAlignment="Right" Margin="8,8,3,3" Opacity="0.15" Points="0,10 10,10 10,0" Stretch="Uniform" VerticalAlignment="Bottom"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Visibility" TargetName="Arrow" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridStyle1" TargetType="{x:Type DataGrid}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="#FF688CAF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="RowDetailsVisibilityMode" Value="VisibleWhenSelected"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGrid}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True" CornerRadius="10,10,10,10">
+                            <ScrollViewer x:Name="DG_ScrollViewer" Focusable="false">
+                                <ScrollViewer.Template>
+                                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Button Command="{x:Static DataGrid.SelectAllCommand}" Focusable="false" Style="{DynamicResource {ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}}" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.All}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="2" Grid.Row="1"/>
+                                            <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="2" Maximum="{TemplateBinding ScrollableHeight}" Orientation="Vertical" Grid.Row="1" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
+                                            <Grid Grid.Column="1" Grid.Row="2">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="{Binding NonFrozenColumnsViewportHorizontalOffset, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <ScrollBar x:Name="PART_HorizontalScrollBar" Grid.Column="1" Maximum="{TemplateBinding ScrollableWidth}" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
+                                            </Grid>
+                                        </Grid>
+                                    </ControlTemplate>
+                                </ScrollViewer.Template>
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                            </ScrollViewer>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsGrouping" Value="true"/>
+                        <Condition Property="VirtualizingPanel.IsVirtualizingWhenGrouping" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="40" BorderThickness="10" BorderBrush="White">
+
+        <Border CornerRadius="25"   BorderThickness="20">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                    <GradientStop Color="#0900a3" Offset="0.0"/>
+                    <GradientStop Color="#3f3f70" Offset="0.25"/>
+                    <GradientStop Color="#7930c1" Offset="0.5"/>
+                    <GradientStop Color="#8b14d1" Offset="0.75"/>
+                    <GradientStop Color="#da00ff" Offset="1.0"/>
+
+
+
+
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+
+
+
+            <Grid>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                        <GradientStop Color="#0900a3" Offset="0.0"/>
+                        <GradientStop Color="#3f3f70" Offset="0.25"/>
+                        <GradientStop Color="#7930c1" Offset="0.5"/>
+                        <GradientStop Color="#8b14d1" Offset="0.75"/>
+                        <GradientStop Color="#da00ff" Offset="1.0"/>
+
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+
+
+
+
+
+
+
+
+
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Ellipse Fill="red" Grid.Row="0" Height="15" Width="15" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-1,10,0" MouseLeftButtonDown="closeApp" ToolTip="Close" Cursor="Hand"></Ellipse>
+                <Ellipse Fill="Yellow" Grid.Row="0" Height="14" Width="15" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,30,0" MouseLeftButtonDown="minimizeApp" ToolTip="Minimize" Cursor="Hand"></Ellipse>
+                <TextBlock HorizontalAlignment="Left" Margin="215,0,0,0" Background="Transparent" TextWrapping="Wrap" Text="peaky blinders" VerticalAlignment="Center" Width="450" FontFamily="Alycidon" FontSize="50">
+                    <TextBlock.Effect>
+                        <BlurEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="BtnCercaFile" Content="Seleziona un file" HorizontalAlignment="Left" Margin="208,40,0,0" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="105" BorderBrush="Black" FontFamily="Segoe UI Semibold" Visibility="Visible" Foreground="White" Click="BtnCercaFile_Click">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.OpacityMask>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="Black" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.OpacityMask>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6D6D5E"/>
+                            <GradientStop Color="#FF969688" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+
+
+
+
+
+
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="BtnSha" Content="Confronta sha:" HorizontalAlignment="Left" Margin="10,75,0,0" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="105" BorderBrush="Black" FontFamily="Segoe UI Semibold" Visibility="Visible" Click="BtnSha_Click" Foreground="White">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6D6D5E"/>
+                            <GradientStop Color="#FF969688" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="BtnFirma" Content="Verifica firma" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="105" BorderBrush="Black" FontFamily="Segoe UI Semibold" Visibility="Visible" Click="BtnFirma_Click" Margin="0,263,0,0" Foreground="White">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6D6D5E"/>
+                            <GradientStop Color="#FF969688" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="LblPercorso" Content="Percorso del file:" HorizontalAlignment="Left" Margin="318,45,0,0" Grid.Row="1" VerticalAlignment="Top" Width="327" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White"/>
+                <Label x:Name="LblSha" Content="" HorizontalAlignment="Left" Margin="132,80,0,0" Grid.Row="1" VerticalAlignment="Top" Width="210" FontFamily="Alef" BorderThickness="0,0,0,0"/>
+                <TextBox x:Name="TxtSha" Style="{DynamicResource TextBoxStyle1}" HorizontalAlignment="Left" Margin="132,4,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="598" Height="31" VerticalScrollBarVisibility="Hidden" FontFamily="Alef" BorderBrush="Black"/>
+                <Label x:Name="LblFirmaVerificata" Content="" HorizontalAlignment="Left" Margin="115,267,0,0" Grid.Row="1" VerticalAlignment="Top" Width="312" FontFamily="Alef" BorderThickness="0,0,0,0"/>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="BtnCercaPgp" Content="Cerca file PGP" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="158" BorderBrush="Black" FontFamily="Segoe UI Semibold" Visibility="Visible" Click="BtnCercaPgp_Click" Margin="0,191,0,0" Foreground="White">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6D6D5E"/>
+                            <GradientStop Color="#FF969688" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button Style="{DynamicResource ButtonStyle1}" x:Name="BtnCercaChiave" Content="Cerca File ASC" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="158" BorderBrush="Black" FontFamily="Segoe UI Semibold" Visibility="Visible" Click="BtnCercaChiave_Click" Margin="0,227,0,0" Foreground="White">
+                    <Button.Effect>
+                        <DropShadowEffect/>
+                    </Button.Effect>
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF6D6D5E"/>
+                            <GradientStop Color="#FF969688" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="LblFirma" Content="" HorizontalAlignment="Left" Margin="170,225,0,0" Grid.Row="1" VerticalAlignment="Top" Width="312" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White"/>
+                <Label x:Name="LblPgp" Content="" HorizontalAlignment="Left" Margin="170,195,0,0" Grid.Row="1" VerticalAlignment="Top" Width="312" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White"/>
+                <Label Content="Da confrontare con lo SHA del file: " HorizontalAlignment="Left" Margin="10,45,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White" Width="193"/>
+                <Label Content="Scrivi uno SHA 256: " HorizontalAlignment="Left" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White" Width="117"/>
+                <Label Content="Inserisci i due file attraverso i bottoni cerca e poi premi verifica firma per verificare la firma del file PGP" HorizontalAlignment="Center" Margin="0,152,0,0" Grid.Row="1" VerticalAlignment="Top" FontFamily="Alef" BorderThickness="0,0,0,0" Foreground="White" Width="720"/>
+
+
+            </Grid>
+        </Border>
+    </Border>
 </Window>
