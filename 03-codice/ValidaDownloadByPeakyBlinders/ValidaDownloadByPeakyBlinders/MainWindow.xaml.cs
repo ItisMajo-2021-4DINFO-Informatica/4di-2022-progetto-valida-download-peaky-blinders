@@ -4,21 +4,19 @@ using System.Windows;
 using System.Windows.Input;
 using ValidaDownloadByPeakyBlinders.Classi;
 
-
 namespace ValidaDownloadByPeakyBlinders
 {
     public partial class MainWindow : Window
     {
-        Metodi metodi = new Metodi();
-        string ASHCalcolato;
-        string percorso;
-        string percorsochiave;
-        string percorsopgp;
+        private Metodi metodi = new Metodi();
+        private string ASHCalcolato;
+        private string percorso;
+        private string percorsochiave;
+        private string percorsopgp;
 
         public MainWindow(bool doNotMakeInvisible)
         {
             InitializeComponent();
-            
         }
 
         public MainWindow()
@@ -29,7 +27,6 @@ namespace ValidaDownloadByPeakyBlinders
             form.ShowDialog();
             Close();
         }
-        
 
         private void closeApp(object sender, MouseButtonEventArgs e)
         {
@@ -58,20 +55,33 @@ namespace ValidaDownloadByPeakyBlinders
         private void BtnCercaFile_Click(object sender, RoutedEventArgs e)
         {
             percorso = metodi.CercaFile();
-            LblPercorso.Content = "Percorso del file: " + percorso;
-            ASHCalcolato = metodi.CalcoloAsh(percorso);
+            if (percorso == "Errore")
+            {
+                MessageBox.Show("Errore durante la selezione del file");
+            }
+            else
+            {
+                LblPercorso.Content = "Percorso del file: " + percorso;
+                ASHCalcolato = metodi.CalcoloAsh(percorso);
+                if (ASHCalcolato == "ERRORE")
+                {
+                    MessageBox.Show("Calcolo dello SHA fallito, riprova");
+                }
+            }
         }
 
         private void BtnSha_Click(object sender, RoutedEventArgs e)
         {
+            string ASHinUP = string.Empty;
             string ASHinput = TxtSha.Text;
-            if (ASHinput == null || ASHinput == " ")
+            ASHinUP =  ASHinput.ToUpper();
+            if (ASHinUP == null || ASHinput == " ")
             {
-                LblSha.Content = "ERRORE INSERIRE UNO SHA DI CONFRONTO";
+                MessageBox.Show("Errore inserire uno sha di confronto valido");
             }
             else
             {
-                if (ASHCalcolato == ASHinput)
+                if (ASHCalcolato == ASHinUP)
                 {
                     LblSha.Content = "LO SHA CALCOLATO CORRISPONDE CON QUELLO DEL FILE";
                 }

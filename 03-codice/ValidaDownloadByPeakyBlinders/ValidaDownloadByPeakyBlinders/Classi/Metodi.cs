@@ -10,24 +10,41 @@ namespace ValidaDownloadByPeakyBlinders.Classi
     {
         public string CalcoloAsh(string filename)
         {
-            using (var Sha256 = SHA256.Create())
+            try
             {
-                using (var stream = File.OpenRead(filename))
+                using (var Sha256 = SHA256.Create())
                 {
-                    var hash = Sha256.ComputeHash(stream);
-                    return BitConverter.ToString(hash).Replace("-", "");
+                    using (var stream = File.OpenRead(filename))
+                    {
+                        var hash = Sha256.ComputeHash(stream);
+                        return BitConverter.ToString(hash).Replace("-", "");
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                return "ERRORE";
             }
         }
 
         public string CercaFile()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
+            try
             {
-                return openFileDialog.FileName;
+                OpenFileDialog openFileDialog = new OpenFileDialog();
+                if (openFileDialog.ShowDialog() == true)
+                {
+                    return openFileDialog.FileName;
+                }
+                else 
+                { 
+                    return "Errore"; 
+                }
             }
-            else { return "Errore"; }
+            catch
+            {
+                return "Errore";
+            }
         }
 
         public string VerificaFirma(string firma, string filename)
