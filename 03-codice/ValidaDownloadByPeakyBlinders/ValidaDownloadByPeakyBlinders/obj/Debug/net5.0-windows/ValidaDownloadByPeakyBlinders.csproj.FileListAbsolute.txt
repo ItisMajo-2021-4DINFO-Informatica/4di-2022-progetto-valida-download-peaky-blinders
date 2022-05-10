@@ -62,7 +62,6 @@ C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codic
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\MainWindow.g.cs
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\App.g.cs
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\ValidaDownloadByPeakyBlinders_MarkupCompile.cache
-C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\ValidaDownloadByPeakyBlinders_MarkupCompile.lref
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\MainWindow.baml
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\ValidaDownloadByPeakyBlinders.g.resources
 C:\Users\migno\Desktop\4di-2022-progetto-valida-download-peaky-blinders\03-codice\ValidaDownloadByPeakyBlinders\ValidaDownloadByPeakyBlinders\obj\Debug\net5.0-windows\ValidaDownloadByPeakyBlinders.GeneratedMSBuildEditorConfig.editorconfig

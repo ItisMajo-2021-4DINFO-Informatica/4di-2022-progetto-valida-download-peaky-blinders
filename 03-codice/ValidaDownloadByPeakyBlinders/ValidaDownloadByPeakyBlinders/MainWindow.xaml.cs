@@ -8,7 +8,9 @@ namespace ValidaDownloadByPeakyBlinders
 {
     public partial class MainWindow : Window
     {
-        private Metodi metodi = new Metodi();
+        private CalcoloSha calcoloSha = new CalcoloSha();
+        private CercaFile cercaFile = new CercaFile();
+        private VerificaChiavePgp verificaChiavePgp = new VerificaChiavePgp();
         private string ASHCalcolato;
         private string percorso;
         private string percorsochiave;
@@ -34,9 +36,9 @@ namespace ValidaDownloadByPeakyBlinders
             {
                 Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("ERRORE NEL'OPERAZIONE RICHIESTA, SE L'ERRORE PERSISTE CHIUDERE l'APP E RIPROVARE");
             }
         }
 
@@ -46,15 +48,15 @@ namespace ValidaDownloadByPeakyBlinders
             {
                 this.WindowState = WindowState.Minimized;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("ERRORE NEL'OPERAZIONE RICHIESTA, SE L'ERRORE PERSISTE CHIUDERE l'APP E RIPROVARE");
             }
         }
 
         private void BtnCercaFile_Click(object sender, RoutedEventArgs e)
         {
-            percorso = metodi.CercaFile();
+            percorso = cercaFile.RicercaFile();
             if (percorso == "Errore")
             {
                 MessageBox.Show("Errore durante la selezione del file");
@@ -62,7 +64,7 @@ namespace ValidaDownloadByPeakyBlinders
             else
             {
                 LblPercorso.Content = "Percorso del file: " + percorso;
-                ASHCalcolato = metodi.CalcoloAsh(percorso);
+                ASHCalcolato = calcoloSha.CalcoloAsh(percorso);
                 if (ASHCalcolato == "ERRORE")
                 {
                     MessageBox.Show("Calcolo dello SHA fallito, riprova");
@@ -74,7 +76,7 @@ namespace ValidaDownloadByPeakyBlinders
         {
             string ASHinUP = string.Empty;
             string ASHinput = TxtSha.Text;
-            ASHinUP =  ASHinput.ToUpper();
+            ASHinUP = ASHinput.ToUpper();
             if (ASHinUP == null || ASHinput == " ")
             {
                 MessageBox.Show("Errore inserire uno sha di confronto valido");
@@ -94,19 +96,28 @@ namespace ValidaDownloadByPeakyBlinders
 
         private void BtnFirma_Click(object sender, RoutedEventArgs e)
         {
-            string controllo = metodi.VerificaFirma(percorsochiave, percorsopgp);
-            LblFirmaVerificata.Content = controllo;
+            string impronta = string.Empty;
+            impronta = TxtImpronta.Text;
+            if (impronta == null || impronta == " ")
+            {
+                MessageBox.Show("Errore inserire un impronta valida");
+            }
+            else
+            {
+                impronta.ToUpper();
+                verificaChiavePgp.VerificaFirma(percorsochiave, percorsopgp, impronta);
+            }
         }
 
         private void BtnCercaChiave_Click(object sender, RoutedEventArgs e)
         {
-            percorsochiave = metodi.CercaFile();
+            percorsochiave = cercaFile.RicercaFile();
             LblFirma.Content = percorsochiave;
         }
 
         private void BtnCercaPgp_Click(object sender, RoutedEventArgs e)
         {
-            percorsopgp = metodi.CercaFile();
+            percorsopgp = cercaFile.RicercaFile();
             LblPgp.Content = percorsopgp;
         }
     }
