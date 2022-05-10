@@ -32,9 +32,9 @@ namespace ValidaDownloadByPeakyBlinders.Classi
                     pProcess.WaitForExit();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
+             
             }
         }
     }

@@ -112,13 +112,27 @@ namespace ValidaDownloadByPeakyBlinders
         private void BtnCercaChiave_Click(object sender, RoutedEventArgs e)
         {
             percorsochiave = cercaFile.RicercaFile();
-            LblFirma.Content = percorsochiave;
+            if (percorsochiave == null || percorsochiave == " ")
+            {
+                MessageBox.Show("Errore inserire una chiave valida");
+            }
+            else
+            {
+                LblFirma.Content = percorsochiave;
+            }
         }
 
         private void BtnCercaPgp_Click(object sender, RoutedEventArgs e)
         {
             percorsopgp = cercaFile.RicercaFile();
-            LblPgp.Content = percorsopgp;
+            if (percorsochiave == null || percorsochiave == " ")
+            {
+                MessageBox.Show("Errore inserire un file valido");
+            }
+            else
+            {
+                LblPgp.Content = percorsopgp;
+            }
         }
     }
 }
