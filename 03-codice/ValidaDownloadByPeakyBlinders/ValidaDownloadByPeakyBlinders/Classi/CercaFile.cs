@@ -1,5 +1,5 @@
-﻿using System;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
+using System;
 
 namespace ValidaDownloadByPeakyBlinders.Classi
 {
@@ -19,7 +19,7 @@ namespace ValidaDownloadByPeakyBlinders.Classi
                     return "Errore";
                 }
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 return "Errore";
             }

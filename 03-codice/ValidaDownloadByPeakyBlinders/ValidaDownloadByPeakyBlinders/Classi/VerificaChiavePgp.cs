@@ -34,7 +34,6 @@ namespace ValidaDownloadByPeakyBlinders.Classi
             }
             catch (Exception)
             {
-             
             }
         }
     }
