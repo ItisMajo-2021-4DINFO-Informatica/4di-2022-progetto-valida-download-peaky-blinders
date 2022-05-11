@@ -98,23 +98,32 @@ namespace ValidaDownloadByPeakyBlinders
         {
             string impronta = string.Empty;
             impronta = TxtImpronta.Text;
-            if (impronta == null || impronta == " ")
+            if (percorsopgp == null || percorsopgp == " " || percorsopgp == "Errore" || percorsochiave == null || percorsochiave == " " || percorsochiave == "Errore")
             {
-                MessageBox.Show("Errore inserire un impronta valida");
+                MessageBox.Show("Inserire dei valori corretti");
             }
             else
             {
-                impronta.ToUpper();
-                verificaChiavePgp.VerificaFirma(percorsochiave, percorsopgp, impronta);
+                if (impronta == null || impronta == " ")
+                {
+                    MessageBox.Show("Errore inserire un impronta valida");
+                    return;
+                }
+                else
+                {
+                    impronta.ToUpper();
+                    verificaChiavePgp.VerificaFirma(percorsochiave, percorsopgp, impronta);
+                }
             }
         }
 
         private void BtnCercaChiave_Click(object sender, RoutedEventArgs e)
         {
             percorsochiave = cercaFile.RicercaFile();
-            if (percorsochiave == null || percorsochiave == " ")
+            if (percorsochiave == null || percorsochiave == " " || percorsochiave == "Errore")
             {
                 MessageBox.Show("Errore inserire una chiave valida");
+                return;
             }
             else
             {
@@ -125,9 +134,10 @@ namespace ValidaDownloadByPeakyBlinders
         private void BtnCercaPgp_Click(object sender, RoutedEventArgs e)
         {
             percorsopgp = cercaFile.RicercaFile();
-            if (percorsochiave == null || percorsochiave == " ")
+            if (percorsopgp == null || percorsopgp == " " || percorsopgp == "Errore")
             {
                 MessageBox.Show("Errore inserire un file valido");
+                return;
             }
             else
             {
