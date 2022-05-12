@@ -11,7 +11,7 @@ Nel seguente elenco sono presenti i link per raggiungere i documenti di definizi
 ---
 
 In questa sezione sono presenti i link per raggiungere la cartella del codice e il documento che spiega le modifiche effettuate: 
-  - [Codice](/03-codice/ValidaDownloadByPeakyBlinders)
+  - [Codice](https://github.com/ItisMajo-2021-4DINFO-Informatica/4di-2022-progetto-valida-download-peaky-blinders/tree/main/03-codice/ValidaDownloadByPeakyBlinders)
   - [Documento dei cambiamenti](/03-codice/Valida_Download_by_Peaky_Blinders_Documento_dei_Cambiamenti.md)
 
 ---
