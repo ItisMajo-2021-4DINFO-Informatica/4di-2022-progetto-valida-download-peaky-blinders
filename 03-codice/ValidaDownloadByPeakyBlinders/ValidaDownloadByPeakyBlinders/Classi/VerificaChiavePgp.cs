@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.IO;
 
 namespace ValidaDownloadByPeakyBlinders.Classi
 {
@@ -10,27 +9,19 @@ namespace ValidaDownloadByPeakyBlinders.Classi
         {
             try
             {
-                using (Process pProcess = new Process())
-                {
-                    pProcess.StartInfo.UseShellExecute = false;
-                    pProcess.StartInfo.RedirectStandardOutput = true;
-                    pProcess.StartInfo.CreateNoWindow = true;
-                    pProcess.StartInfo.FileName = "cmd.exe";
-                    pProcess.StartInfo.Arguments = "/k gpg --recv-keys " + Impronta;
-                    pProcess.Start();
-                    pProcess.WaitForExit(1000);
-                }
+                Process process = new Process();
+                ProcessStartInfo startInfo = new ProcessStartInfo();
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                process.StartInfo.FileName = "cmd.exe";
+                process.StartInfo.Arguments = "/k gpg --recv-keys " + Impronta;
+                process.StartInfo = startInfo;
+                process.Start();
 
-                using (Process pProcess = new Process())
-                {
-                    pProcess.StartInfo.UseShellExecute = false;
-                    pProcess.StartInfo.RedirectStandardOutput = true;
-                    pProcess.StartInfo.FileName = "cmd.exe";
-                    pProcess.StartInfo.Arguments = "/k gpg --verify " + ChiavePubblica + " " + FileDaControllare;
-                    pProcess.Start();
-                    StreamReader streamReader = pProcess.StandardOutput;
-                    pProcess.WaitForExit();
-                }
+                Process process2 = new Process();
+                ProcessStartInfo startInfo2 = new ProcessStartInfo();
+                startInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                process2.StartInfo.Arguments = "/k gpg --verify " + ChiavePubblica + " " + FileDaControllare;
+                process2.Start();
             }
             catch (Exception)
             {
